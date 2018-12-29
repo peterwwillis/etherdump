@@ -356,8 +356,6 @@ int main( int argc, char *argv[] )
 
     while ( 1 ) {
 
-        fprintf(stderr, "looping\n");
-
         memset(buffer, 0, sizeof(buffer));
 
         /* wait for packets */
@@ -377,8 +375,6 @@ int main( int argc, char *argv[] )
                 return( 1 );
             }
         }
-
-        fprintf(stderr, "woohoo!!\n");
 
         /* skip duplicate packets on the loopback intface */
         if( from.sll_pkttype == PACKET_OUTGOING && ! strcmp( intface, "lo" ) ) {
